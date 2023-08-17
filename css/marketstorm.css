@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /* --blue: #00a2d2; */
+    --blue: #0089b3;
+}
+
+.marketstorm {
+    /* Normalize font size for calculation */
+    font-family: 'Figtree', sans-serif !important;
+    font-weight: 400 !important;
+    margin-right: 20px;
+}
+
+.marketstorm * {
+    font-size: 15pt;
+    font-weight: 400;
+}
+
+.marketstorm h1 {
+    font-size: 18pt;
+    font-weight: 600;
+}
+
+.marketstorm h2 {
+    font-size: 20pt;
+    font-weight: 600;
+}
+
+.marketstorm .heading {
+    height: 10vh;
+    padding: 2.5vh 0;
+    text-align: center;
+}
+
+.marketstorm .logo {
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+.marketstorm hr {
+    border: none;
+    background-color: lightgray;
+    height: 2px;
+}
+
+.marketstorm th {
+    font-size: inherit;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.marketstorm table {
+    border-bottom: 2px solid lightgray;
+}
+
+.marketstorm input[type="submit"], input[type="button"] {
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background-color: var(--blue);
+    color: whitesmoke;
+    font-family: 'Figtree', sans-serif !important;
+    font-weight: 600;
+    font-size: 13pt;
+    padding: 0.5em 1em !important;
+    line-height: initial !important;
+}
+
+.marketstorm input[type="submit"]:hover, input[type="button"]:hover {
+    border: none;
+    background-color: unset;
+    color: var(--blue);
+    outline: 4px solid var(--blue);
+}
