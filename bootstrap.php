@@ -4,7 +4,7 @@
 Plugin Name: MarketStorm
 Plugin URI:  https://github.com/marketstorm-ai/wordpress-plugin
 Description: A pixel injection plugin for MarketStorm clients
-Version:     0.0.1
+Version:     0.0.2
 Author:      MarketStorm
 Author URI:  marketstorm.ai
 */
