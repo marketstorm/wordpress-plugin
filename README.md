@@ -1,7 +1,6 @@
 # MarketStorm Wordpress Plugin
 
-This plugin is designed for pixel injection on client Wordpress sites working with MarketStorm. The plugin is compatible with both Single and Multisite instances of Wordpress. The plugin is not designed to be used outside of MarketStorm clients. This plugin allows for MarketStorm to easily send updates to clients rather than sending Pixels as raw HTML.
-
+This plugin is designed to replace manual Pixel placement on MarketStorm client's Wordpress sites. The plugin is compatible with both Single and Multisite instances of Wordpress.
 ## Installation and Usage
 
 1) Download the latest release from Github [here](https://github.com/marketstorm-ai/wordpress-plugin/releases/latest)
