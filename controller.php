@@ -73,22 +73,24 @@ if (!class_exists('Controller')) {
 
 
 		public function deactivate() {
-			if(is_multisite()) {
-				$count = get_sites( ['count' => true] );	
+			// if(is_multisite()) {
+			// 	$count = get_sites( ['count' => true] );	
 
-				$sites = get_sites([
-					'number' => $count,
-					'fields' => 'ids'
-				]);
+			// 	$sites = get_sites([
+			// 		'number' => $count,
+			// 		'fields' => 'ids'
+			// 	]);
 	
-				foreach($sites as $site) {
-					switch_to_blog($site);
-					delete_option(OPTION_NAME);
-				}
-			}
-			else {
-				delete_option(OPTION_NAME);
-			}
+			// 	foreach($sites as $site) {
+			// 		switch_to_blog($site);
+			// 		delete_option(OPTION_NAME);
+			// 	}
+			// }
+			// else {
+			// 	delete_option(OPTION_NAME);
+			// }
+
+			delete_option(OPTION_NAME);
 		}
 
 		public function update() {}
