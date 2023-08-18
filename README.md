@@ -1,10 +1,10 @@
 # MarketStorm Wordpress Plugin
 
-This plugin is designed for pixel injection on client Wordpress sites working with MarketStorm. The plugin is compatible with both Single and Multisite instances of Wordpress. The plugin is not designed to be used outside of MarketStorm clients.
+This plugin is designed for pixel injection on client Wordpress sites working with MarketStorm. The plugin is compatible with both Single and Multisite instances of Wordpress. The plugin is not designed to be used outside of MarketStorm clients. This plugin allows for MarketStorm to easily send updates to clients rather than sending Pixels as raw HTML.
 
 ## Installation and Usage
 
-1) Download the latest release from Github - [Latest Release](https://github.com/marketstorm-ai/wordpress-plugin/releases/latest)
+1) Download the latest release from Github [here](https://github.com/marketstorm-ai/wordpress-plugin/releases/latest)
 2) Upload Plugin to Wordpress
    - Plugins -> Add New -> Upload Plugin
 
@@ -20,3 +20,9 @@ This plugin is designed for pixel injection on client Wordpress sites working wi
 5) On Wordpress in the Settings -> Marketstorm menu, enter the Matomo Container ID for the website and press Save
 
 ![Wordpress Settings](/docs/wordpress_settings.png)
+
+6) If needed, the plugin update check can be triggered using the Update hyperlink in the Wordpress Plugin List.
+
+## Important Notes
+- The Container ID stored by the plugin will not persist upon deactivation
+- If the Container ID is left blank, no code will be injected.
