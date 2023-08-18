@@ -6,32 +6,38 @@ Wordpress plugin for Marketstorm Pixels.
 
 - Multisite and Single site Wordpress instances
 - Compatible with Matomo Tag Manager Pixels
-- Ensures that pixel execution is not deferred by Nitropack, Jetpack, or Cloudflare
+- Prevent Pixel deferral by Nitropack, Jetpack, or Cloudflare
+- One click updates
 
 ## Installation and Usage
 
 1) **Download** the latest release from [here](https://github.com/marketstorm-ai/wordpress-plugin/releases/latest)
-   - Choose the *Source code (zip)* file under the Assets tab
+   - Choose *Source code (zip)* under Assets tab
 
-3) **Upload Plugin** to Wordpress
-   **- Plugins -> Add New -> Upload Plugin**
-
-
-![Wordpress Plugin Upload](/docs/wordpress_upload.png)
+3) **Upload** Plugin to Wordpress
+   - Plugins -> Add New -> Upload Plugin
 
 
-**WARNING: Network Activate** will activate the plugin for all sites on a **Wordpress Multisite Instance**. Unless that is desired, the relevant sites should be **activated manually**.
+![](/docs/wordpress_upload.png)
 
-**3) Activate the plugin for the given website**
-**4) Find the Container ID in Matomo**
 
-![Matomo Container ID](/docs/container_id.png)
+**WARNING: Network Activate** will activate the plugin for all sites on a **Wordpress Multisite Instance**. Unless that is the goal, the relevant sites should be **activated manually**.
 
-5) On **Wordpress** in **Settings -> Marketstorm**, enter the Matomo **Container ID** for the Tag Manager and **Save**
+3) **Activate** the plugin for the one site
 
-![Wordpress Settings](/docs/wordpress_settings.png)
+4) Find the **Container ID** for the Tag Manager in Matomo
+   - Tag Manager -> Tag Manager (Sidebar) -> Manage Containers
 
-6) If needed, a plugin update check can be triggered using the **Update** link on the MarketStorm entry of the **Plugin List**.
+![](/docs/container_id.png)
+
+6) On **Wordpress**, enter the Matomo **Container ID** for the Tag Manager and **Save**
+
+   - Settings -> Marketstorm
+
+![](/docs/wordpress_settings.png)
+
+7) If needed, a plugin update check can be triggered using the **Update** link on the MarketStorm entry of the **Plugin List**.
+
    - Next to the plugin's Activate/Deactivate buttons
 
 ## Important Notes
