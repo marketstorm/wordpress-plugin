@@ -81,11 +81,13 @@ if (!class_exists('MatomoInjector')) {
    
         
         public function settingSectionMarkup($args) : void {
+            /*
             ?>
             <p>
                 This is the section for the Matomo Injector.
             </p>
             <?php
+            */
         }
 
 
