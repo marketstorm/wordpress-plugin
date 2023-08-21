@@ -11,8 +11,6 @@ Wordpress plugin for Marketstorm Pixels.
 
 ## Installation and Usage
 
-**IMPORTANT:** If the site already has a Marketstorm Pixel placed, the Tag Manager code must be removed prior to following the steps below
-
 1) **Download** the latest release from [here](https://github.com/marketstorm-ai/wordpress-plugin/releases/latest)
    - Choose *Source code (zip)* under Assets tab
 
@@ -23,7 +21,7 @@ Wordpress plugin for Marketstorm Pixels.
 ![](/docs/wordpress_upload.png)
 
 
-**WARNING**: Network Activate will activate the plugin for all sites on a Wordpress Multisite Instance. Unless that is the goal, the relevant sites should be activated manually.
+**IMPORTANT**: Network Activate will activate the plugin for all sites on a Wordpress Multisite Instance. Unless that is the goal, the relevant sites should be activated manually.
 
 3) **Activate** the plugin for the one site
 
@@ -45,6 +43,9 @@ Wordpress plugin for Marketstorm Pixels.
 
    - Can be found next to the plugin's Activate/Deactivate buttons
 
-## Important Notes
+8) If the site previously had a Marketstorm Pixel/Tag Manager placed, that code should be removed now
+
+
+## Other Notes
 - The Container ID stored by the plugin will not persist upon deactivation
 - If the Container ID is left blank, no code will be placed in the client site.
