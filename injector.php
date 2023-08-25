@@ -15,7 +15,7 @@ if (!class_exists('MarketStorm\AbstractInjector')) {
 
 
         public function __get($variable) {
-            $values = get_option(OPTION_NAME, null);
+            $values = get_option(MARKETSTORM_OPTION_NAME, null);
             $key = $this->getId() . "_{$variable}";
 
             if(is_null($values)) {
@@ -34,7 +34,7 @@ if (!class_exists('MarketStorm\AbstractInjector')) {
             $key = $this->getId() . "_{$variable}";
             $settings = Controller::settingsValidate(array($key => $value));
 
-			update_option(OPTION_NAME, $settings);
+			update_option(MARKETSTORM_OPTION_NAME, $settings);
         }
 
 

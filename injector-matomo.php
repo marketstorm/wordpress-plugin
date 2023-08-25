@@ -50,7 +50,7 @@ if (!class_exists('MarketStorm\MatomoInjector')) {
                         s = d.currentScript;
             
                     g.async = true; 
-                    g.src = "<?php echo esc_attr(MATOMO_URI) ?>/container_<?php echo $this->container_id ?>.js";
+                    g.src = "<?php echo esc_attr(MARKETSTORM_MATOMO_URI) ?>/container_<?php echo $this->container_id ?>.js";
                     for(const a of document.currentScript.attributes) { g.setAttribute(a.name, a.value); }
                     s.parentNode.insertBefore(g,s);
                 })();
@@ -95,7 +95,7 @@ if (!class_exists('MarketStorm\MatomoInjector')) {
             ?>
 			<input 
 				type='text'
-                name='<?php echo esc_attr_e(OPTION_NAME . "[{$this->getId()}_container_id]"); ?>'
+                name='<?php echo esc_attr_e(MARKETSTORM_OPTION_NAME . "[{$this->getId()}_container_id]"); ?>'
 				value='<?php echo esc_attr_e($this->container_id); ?>'
 			>
 			<?php

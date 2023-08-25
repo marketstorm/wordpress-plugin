@@ -28,11 +28,11 @@ if (!class_exists('MarketStorm\Controller')) {
 			$url = plugin_dir_url(__FILE__) . '/css/marketstorm.css';
 
 			wp_register_style(
-				PREFIX . '_styles',
+				MARKETSTORM_PREFIX . '_styles',
 				$url,
 			);
 
-			wp_enqueue_style(PREFIX . '_styles');
+			wp_enqueue_style(MARKETSTORM_PREFIX . '_styles');
 		}
 		
 
@@ -83,29 +83,29 @@ if (!class_exists('MarketStorm\Controller')) {
 	
 			// 	foreach($sites as $site) {
 			// 		switch_to_blog($site);
-			// 		delete_option(OPTION_NAME);
+			// 		delete_option(MARKETSTORM_OPTION_NAME);
 			// 	}
 			// }
 			// else {
-			// 	delete_option(OPTION_NAME);
+			// 	delete_option(MARKETSTORM_OPTION_NAME);
 			// }
 
-			delete_option(OPTION_NAME);
+			delete_option(MARKETSTORM_OPTION_NAME);
 		}
 
 		public function update() {}
 
 
 		public function markupSettingPage() {
-			if(!current_user_can(REQUIRED_PERMISSIONS)) {
+			if(!current_user_can(MARKETSTORM_REQUIRED_PERMISSIONS)) {
 				return;
 			}
 
 			if(isset($_GET['settings-updated'])) {
 				add_settings_error(
-					PREFIX . '_messages', 
-					PREFIX . '_message', 
-					__('Settings Saved', OPTION_GROUP), 
+					MARKETSTORM_PREFIX . '_messages', 
+					MARKETSTORM_PREFIX . '_message', 
+					__('Settings Saved', MARKETSTORM_OPTION_GROUP), 
 					'updated'
 				);
 			}
@@ -118,8 +118,8 @@ if (!class_exists('MarketStorm\Controller')) {
 					<hr>
 					<form action="options.php" method="post">
 					<?php
-						settings_fields(OPTION_GROUP);
-						do_settings_sections(OPTION_GROUP);
+						settings_fields(MARKETSTORM_OPTION_GROUP);
+						do_settings_sections(MARKETSTORM_OPTION_GROUP);
 						submit_button('Save');
 					?>
 					</form>
@@ -131,10 +131,10 @@ if (!class_exists('MarketStorm\Controller')) {
 		public function registerSettingMenu() {
 			add_submenu_page(
 				'options-general.php',
-				DISPLAY_NAME,
-				DISPLAY_NAME,
-				REQUIRED_PERMISSIONS,
-				OPTION_GROUP,
+				MARKETSTORM_DISPLAY_NAME,
+				MARKETSTORM_DISPLAY_NAME,
+				MARKETSTORM_REQUIRED_PERMISSIONS,
+				MARKETSTORM_OPTION_GROUP,
 				array($this, 'markupSettingPage')
 
 			);
@@ -143,19 +143,19 @@ if (!class_exists('MarketStorm\Controller')) {
 
 		public function registerSettingPage() {
 			register_setting(
-				OPTION_GROUP, 
-				OPTION_NAME,
+				MARKETSTORM_OPTION_GROUP, 
+				MARKETSTORM_OPTION_NAME,
 				array(__CLASS__ . '::settingsValidate')
 			);
 
 			foreach($this->injectors as $injector) {
-				$injector->settingRegister(OPTION_GROUP);
+				$injector->settingRegister(MARKETSTORM_OPTION_GROUP);
 			}
 		}
 
 
 		public static function settingsValidate($settings_new) {
-			$settings = get_option(OPTION_NAME, array());
+			$settings = get_option(MARKETSTORM_OPTION_NAME, array());
 
 			return shortcode_atts($settings, $settings_new);
 		}
@@ -169,7 +169,7 @@ if (!class_exists('MarketStorm\Controller')) {
 
 		public function actionLinks($actions) {
 			$links = array(
-				'<a href="' . admin_url( 'options-general.php?page=' . PREFIX . '_settings' ) . '">Settings</a>',
+				'<a href="' . admin_url( 'options-general.php?page=' . MARKETSTORM_PREFIX . '_settings' ) . '">Settings</a>',
 			);
 
 
@@ -200,8 +200,8 @@ if (!class_exists('MarketStorm\Controller')) {
 			add_action('admin_post_delete_update_transients', [$this, 'deleteUpdateTransients']);
 			add_action('admin_init', [$this, 'registerSettingPage']);
 			add_action('admin_menu', [$this, 'registerSettingMenu']);
-			add_filter('plugin_action_links_' . PLUGIN_BASENAME, [$this, 'actionLinks'], 10, 1);
-			add_filter('network_admin_plugin_action_links_' . PLUGIN_BASENAME, [$this, 'actionLinksNetwork'], 10, 1);
+			add_filter('plugin_action_links_' . MARKETSTORM_BASENAME, [$this, 'actionLinks'], 10, 1);
+			add_filter('network_admin_plugin_action_links_' . MARKETSTORM_BASENAME, [$this, 'actionLinksNetwork'], 10, 1);
 		}
 	}
 }

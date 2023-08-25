@@ -111,8 +111,8 @@ class Updater {
                 $plugin = [
                     'name' => $this->plugin['Name'],
                     'slug' => $this->basename,
-                    'requires' => REQUIRED_WP_VERSION,
-                    'tested' => TESTED_WP_VERSION,
+                    'requires' => MARKETSTORM_REQUIRED_WP_VERSION,
+                    'tested' => MARKETSTORM_TESTED_WP_VERSION,
                     'version' => $this->github_data['tag_name'],
                     'author' => $this->plugin['AuthorName'],
                     'author_profile' => $this->plugin['AuthorURI'],
