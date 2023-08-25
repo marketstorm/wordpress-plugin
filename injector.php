@@ -2,7 +2,7 @@
 
 namespace MarketStorm;
 
-if (!class_exists('AbstractInjector')) {
+if (!class_exists('MarketStorm\AbstractInjector')) {
     abstract class AbstractInjector {
         const HEAD = 'wp_head';
         const BODY = 'wp_body';
@@ -10,7 +10,7 @@ if (!class_exists('AbstractInjector')) {
 
         
         protected function __construct($target = self::HEAD) {
-            add_action($target, array($this, 'inject'), -99999);
+            add_action($target, array($this, 'inject'), 100);
         }
 
 

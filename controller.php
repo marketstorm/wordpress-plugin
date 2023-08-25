@@ -2,7 +2,7 @@
 
 namespace MarketStorm;
 
-if (!class_exists('Controller')) {
+if (!class_exists('MarketStorm\Controller')) {
 	class Controller {
 		private array $injectors;
         private static $instance;

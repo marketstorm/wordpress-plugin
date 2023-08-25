@@ -2,7 +2,7 @@
 
 namespace MarketStorm;
 
-if (!class_exists('MatomoInjector')) {
+if (!class_exists('MarketStorm\MatomoInjector')) {
     class MatomoInjector extends AbstractInjector {
         private static $instance;
 
@@ -51,7 +51,7 @@ if (!class_exists('MatomoInjector')) {
             
                     g.async = true; 
                     g.src = "<?php echo esc_attr(MATOMO_URI) ?>/container_<?php echo $this->container_id ?>.js";
-                    for(const a of s.attributes) { g.setAttribute(a.name, a.value); }
+                    for(const a of document.currentScript.attributes) { g.setAttribute(a.name, a.value); }
                     s.parentNode.insertBefore(g,s);
                 })();
             </script>
